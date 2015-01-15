@@ -53,6 +53,7 @@ hist(steps_per_day$steps, col="orange", main="Histogram of Total Steps Each Day"
 rmean <- mean(steps_per_day$steps)
 rmedian <- median(steps_per_day$steps)
 ```
+
 The mean number of steps taken per day is `r rmean` and median number of steps taken per day is `r rmedian`.
 
 ###What is the average daily activity pattern?
