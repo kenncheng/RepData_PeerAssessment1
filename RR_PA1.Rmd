@@ -52,6 +52,8 @@ hist(steps_per_day$steps, col="orange", main="Histogram of Total Steps Each Day"
 ```{r}
 rmean <- mean(steps_per_day$steps)
 rmedian <- median(steps_per_day$steps)
+rmean
+rmedian
 ```
 
 The mean number of steps taken per day is `r rmean` and median number of steps taken per day is `r rmedian`.
@@ -70,6 +72,8 @@ plot(steps_per_interval$interval, steps_per_interval$steps, type="l", xlab="Inte
 ```{r}
 max_interval <- steps_per_interval[which.max(steps_per_interval$steps),1]
 max_steps <- round(max(steps_per_interval$steps))
+max_interval
+max_steps
 ```
 The `r max_interval`th 5-minute interval contains the maximum number of `r max_steps` steps.
 
@@ -103,6 +107,8 @@ hist(steps_per_day_i$steps, col="orange", main="Histogram of Total Steps Each Da
 ```{r}
 mean_i <- mean(steps_per_day_i$steps)
 median_i <- median(steps_per_day_i$steps)
+mean_i
+median_i
 ```
 The mean is `r mean_i` and median is `r median_i` for the total number of steps taken per day in the imputed data.
 
@@ -110,6 +116,8 @@ The mean is `r mean_i` and median is `r median_i` for the total number of steps 
 ```{r}
 mean_diff <- mean_i - rmean
 median_diff <- median_i - rmedian
+mean_diff
+median_diff
 ```
 The difference in the mean of imputed data from original data is `r mean_diff`.
 The difference in the median of imputed data from original data is `r median_diff`.
@@ -117,6 +125,7 @@ The difference in the median of imputed data from original data is `r median_dif
 7. What is the impact of imputing missing data on the estimates of the total daily number of steps?
 ```{r}
 total_diff <- sum(steps_per_day_i$steps) - sum(steps_per_day$steps)
+total_diff
 ```
 
 The imputed data set resulted in `r total_diff` more total daily number of steps.

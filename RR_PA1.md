@@ -57,6 +57,19 @@ hist(steps_per_day$steps, col="orange", main="Histogram of Total Steps Each Day"
 ```r
 rmean <- mean(steps_per_day$steps)
 rmedian <- median(steps_per_day$steps)
+rmean
+```
+
+```
+## [1] 10766.19
+```
+
+```r
+rmedian
+```
+
+```
+## [1] 10765
 ```
 
 The mean number of steps taken per day is 1.0766189 &times; 10<sup>4</sup> and median number of steps taken per day is 10765.
@@ -79,6 +92,19 @@ plot(steps_per_interval$interval, steps_per_interval$steps, type="l", xlab="Inte
 ```r
 max_interval <- steps_per_interval[which.max(steps_per_interval$steps),1]
 max_steps <- round(max(steps_per_interval$steps))
+max_interval
+```
+
+```
+## [1] 835
+```
+
+```r
+max_steps
+```
+
+```
+## [1] 206
 ```
 The 835th 5-minute interval contains the maximum number of 206 steps.
 
@@ -118,6 +144,19 @@ hist(steps_per_day_i$steps, col="orange", main="Histogram of Total Steps Each Da
 ```r
 mean_i <- mean(steps_per_day_i$steps)
 median_i <- median(steps_per_day_i$steps)
+mean_i
+```
+
+```
+## [1] 10766.19
+```
+
+```r
+median_i
+```
+
+```
+## [1] 10766.19
 ```
 The mean is 1.0766189 &times; 10<sup>4</sup> and median is 1.0766189 &times; 10<sup>4</sup> for the total number of steps taken per day in the imputed data.
 
@@ -126,6 +165,19 @@ The mean is 1.0766189 &times; 10<sup>4</sup> and median is 1.0766189 &times; 10<
 ```r
 mean_diff <- mean_i - rmean
 median_diff <- median_i - rmedian
+mean_diff
+```
+
+```
+## [1] 0
+```
+
+```r
+median_diff
+```
+
+```
+## [1] 1.188679
 ```
 The difference in the mean of imputed data from original data is 0.
 The difference in the median of imputed data from original data is 1.1886792.
@@ -134,6 +186,11 @@ The difference in the median of imputed data from original data is 1.1886792.
 
 ```r
 total_diff <- sum(steps_per_day_i$steps) - sum(steps_per_day$steps)
+total_diff
+```
+
+```
+## [1] 86129.51
 ```
 
 The imputed data set resulted in 8.6129509 &times; 10<sup>4</sup> more total daily number of steps.

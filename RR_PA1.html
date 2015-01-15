@@ -261,6 +261,16 @@ hist(steps_per_day$steps, col=&quot;orange&quot;, main=&quot;Histogram of Total 
 
 <pre><code class="r">rmean &lt;- mean(steps_per_day$steps)
 rmedian &lt;- median(steps_per_day$steps)
+rmean
+</code></pre>
+
+<pre><code>## [1] 10766.19
+</code></pre>
+
+<pre><code class="r">rmedian
+</code></pre>
+
+<pre><code>## [1] 10765
 </code></pre>
 
 <p>The mean number of steps taken per day is 1.0766189 &times; 10<sup>4</sup> and median number of steps taken per day is 10765.</p>
@@ -285,6 +295,16 @@ plot(steps_per_interval$interval, steps_per_interval$steps, type=&quot;l&quot;, 
 
 <pre><code class="r">max_interval &lt;- steps_per_interval[which.max(steps_per_interval$steps),1]
 max_steps &lt;- round(max(steps_per_interval$steps))
+max_interval
+</code></pre>
+
+<pre><code>## [1] 835
+</code></pre>
+
+<pre><code class="r">max_steps
+</code></pre>
+
+<pre><code>## [1] 206
 </code></pre>
 
 <p>The 835th 5-minute interval contains the maximum number of 206 steps.</p>
@@ -332,6 +352,16 @@ hist(steps_per_day_i$steps, col=&quot;orange&quot;, main=&quot;Histogram of Tota
 
 <pre><code class="r">mean_i &lt;- mean(steps_per_day_i$steps)
 median_i &lt;- median(steps_per_day_i$steps)
+mean_i
+</code></pre>
+
+<pre><code>## [1] 10766.19
+</code></pre>
+
+<pre><code class="r">median_i
+</code></pre>
+
+<pre><code>## [1] 10766.19
 </code></pre>
 
 <p>The mean is 1.0766189 &times; 10<sup>4</sup> and median is 1.0766189 &times; 10<sup>4</sup> for the total number of steps taken per day in the imputed data.</p>
@@ -342,6 +372,16 @@ median_i &lt;- median(steps_per_day_i$steps)
 
 <pre><code class="r">mean_diff &lt;- mean_i - rmean
 median_diff &lt;- median_i - rmedian
+mean_diff
+</code></pre>
+
+<pre><code>## [1] 0
+</code></pre>
+
+<pre><code class="r">median_diff
+</code></pre>
+
+<pre><code>## [1] 1.188679
 </code></pre>
 
 <p>The difference in the mean of imputed data from original data is 0.
@@ -352,6 +392,10 @@ The difference in the median of imputed data from original data is 1.1886792.</p
 </ol>
 
 <pre><code class="r">total_diff &lt;- sum(steps_per_day_i$steps) - sum(steps_per_day$steps)
+total_diff
+</code></pre>
+
+<pre><code>## [1] 86129.51
 </code></pre>
 
 <p>The imputed data set resulted in 8.6129509 &times; 10<sup>4</sup> more total daily number of steps.</p>
